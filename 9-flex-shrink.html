@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundamentos - Flex Shrink</title>
+    <style>
+        .flex_container{
+            display: flex;
+            border: 1px solid black;
+            max-width: 300px;
+        }
+
+        .item{
+            background-color: orangered;
+            margin: 5px;
+            text-align: center;
+            color: white;
+        }
+
+        .s_0{
+            flex-shrink: 0;
+            flex-basis: 100px;
+        }
+
+        .s_1{
+            flex-shrink: 1;
+        }
+
+        .s_2{
+            flex-shrink: 2;
+            flex-basis: 100px;
+        }
+
+        .s_3{
+            flex-shrink: 3;
+            flex-basis: 100px;
+        }
+
+        .fg_1{
+            flex-grow: 1;
+        }
+        
+        .fg_2{
+            flex-grow: 2;
+        }
+
+
+    </style>
+</head>
+<body>
+    <p>flex_shirnk: 1</p>
+    <div class="flex_container">
+        <div class="item s_1 fg_1">A</div>
+        <div class="item s_1 fg_1">B</div>
+        <div class="item s_1 fg_1">C</div>
+        <div class="item s_1 fg_1">D</div>
+    </div>
+
+    <p>flex_shirnk: 0 / basis: 100px</p>
+    <div class="flex_container">
+        <div class="item s_0 fg_1">A</div>
+        <div class="item s_0 fg_1">Grande Texto</div>
+        <div class="item s_0 fg_1">C</div>
+        <div class="item s_0 fg_1">D</div>
+    </div>
+
+    <p>flex_shirnk: mixed / basis: 100px</p>
+    <div class="flex_container">
+        <div class="item s_1 fg_1">A</div>
+        <div class="item s_2 fg_1">Grande Texto</div>
+        <div class="item s_2 fg_1">C</div>
+        <div class="item s_3 fg_1">D</div>
+    </div>
+
+</body>
+</html>
